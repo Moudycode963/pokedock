@@ -1,0 +1,45 @@
+services:
+  apache:
+    build: docker/apache
+    container_name: apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/pokedock
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: nein
+      MYSQL_DATABASE: pokedex
+      MYSQL_USER: phpstorm
+      MYSQL_PASSWORD: p@ssw0rt
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - mariadb_data:/var/lib/mysql
+#  adminer:
+#      image: adminer
+#      restart: always
+#      ports:
+#        - "8080:8080"
+#  bind9:
+#    build: bind/.
+#    container_name: bind9
+#    ports:
+#      - "53:53/udp"
+#      - "53:53/tcp"
+#  ubu:
+#    image: ubuntu
+#    container_name: ubu
+#    ports:
+#      - "8080:80"
+#    volumes:
+#      - ./data:/var/www/html  # ホストのdataフォルダをコンテナ内のApache公開フォルダにマウント
+
+
+volumes:
+  mariadb_data:
+
+

@@ -1,0 +1,36 @@
+FROM php:8.3-apache
+
+RUN docker-php-ext-install pdo pdo_mysql
+COPY pokemon.conf /etc/apache2/sites-available
+RUN a2ensite pokemon.conf
+RUN a2enmod rewrite
+
+
+
+# COPY ./phpinfo.php /var/www/html
+
+
+
+
+
+#FROM httpd
+#LABEL authors="AhmadAboShameh"
+#RUN apt-get update && \
+#    apt-get install -y php php-cli libapache2-mod-php php-mysql && \
+#    rm -rf /var/lib/apt/lists/*
+#
+#
+## Enable PHP in Apache config
+#RUN echo "LoadModule php_module /usr/lib/apache2/modules/libphp.so" >> /usr/local/apache2/conf/httpd.conf && \
+#    echo "AddType application/x-httpd-php .php" >> /usr/local/apache2/conf/httpd.conf && \
+#    echo "DirectoryIndex index.php index.html" >> /usr/local/apache2/conf/httpd.conf
+#
+## Copy your PHP project
+### COPY ./public/ /usr/local/apache2/htdocs/
+#COPY ./pokemon.html /usr/local/apache2/htdocs/
+#COPY ./phpinfo.php /usr/local/apache2/htdocs/
+#
+#RUN a2enmod rewrite
+#
+#EXPOSE 80
+#
