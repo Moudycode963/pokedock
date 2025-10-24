@@ -69,7 +69,7 @@ function createPokemonTable(array $data, string $farbe_1 = '#d0f0c0', string $fa
 
 
 //
-//$conn = new PDO("mysql:host=;dbname=pokedex", 'phpstorm', 'Ahmadtow7@');
+//$conn = new PDO("mysql:host=;dbname=pokedex", 'phpstorm', 'p@ssw0rt');
 //$sql = 'SELECT * FROM pokemon';
 //$stmt = $conn->prepare($sql);
 //$stmt->execute();

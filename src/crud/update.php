@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // 3 Typen für das Dropdown
 $types = ['Grass','Fire','Water','Bug','Normal','Poison','Electric','Ground','Fairy','Fighting','Psychic','Rock','Ghost'];
 ?>
-
 <!doctype html>
 <html lang="de">
 <head>
