@@ -7,7 +7,7 @@ global $id;
 if ($id === null) die("Keine ID angegeben.");
 
 // PDO-Connection wie gehabt
-$pdo = dbConnect();
+$pdo = dbcon();
 $stmt = $pdo->prepare("DELETE FROM pokemon WHERE id = :id");
 $stmt->execute([':id' => $id]);
 

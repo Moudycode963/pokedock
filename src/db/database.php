@@ -3,7 +3,7 @@
 //require_once "../../config/loader.php";
 
 // Datenbankverbindung aufbauen
-function dbConnect(): PDO
+function dbcon(): PDO
 {
     $host = 'mariadb';
     $dbname = 'pokedex';

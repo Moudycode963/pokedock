@@ -1,9 +1,9 @@
 <?php
 global $id;
-require_once "../config/loader.php";
+require_once "../../config/loader.php";
 
 // DB-Verbindung
-$pdo = dbConnect();
+$pdo = dbcon();
 
 // 1️ Pokémon-Daten laden
 $pokemon = findById('pokemon', $id);

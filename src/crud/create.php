@@ -10,7 +10,7 @@ require_once '../html/create.html';
     $name_pokemon = $_POST['pokemon_name'];
     $type_pokemon = $_POST['type'];
     $cought = $_POST['cought'];
-    $conn = dbconnect();
+    $conn = dbcon();
     $sql = "INSERT INTO pokemon (name, caught, type) VALUES (:name_pokemon,:cought,:type)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name_pokemon', $name_pokemon);
